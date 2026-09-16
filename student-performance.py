@@ -7,7 +7,7 @@ print("\nStudent dataset:")
 print(data)
 
 print("\ndataset information:")
-print(data.info())
+data.info()
 
 X = data[["study_hours", "attendance", "previous_grade"]]
 y = data["performance_score"]
