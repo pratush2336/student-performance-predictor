@@ -45,16 +45,18 @@ else:
     performance="Needs Improvement"
 
 print("Predicted Performance:", performance)
-plt.scatter(data["study_hours"], data["performance_score"])
+plt.scatter(data["study_hours"], data["performance_score"], label="Actual Data")
 
 line_predictions = model.predict(
     data[["study_hours", "attendance", "previous_grade"]]
 )
 
-plt.plot(data["study_hours"], line_predictions)
+plt.plot(data["study_hours"], line_predictions, label="Regression Line")
 
 plt.xlabel("Study Hours")
 plt.ylabel("Performance Score")
 plt.title("Study Hours vs Performance Score")
+
+plt.legend()
 
 plt.show()
