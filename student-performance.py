@@ -35,7 +35,7 @@ print("Attendance:", attendance ,"%")
 print("Previous Grade:", previous_grade)
 
 score = model.predict(pd.DataFrame([[study_hours, attendance, previous_grade]], columns=["study_hours", "attendance", "previous_grade"]))[0]
-print("\nPredicted Performance Score:", score)
+print("\nPredicted Performance Score:", round(score, 2))
 
 if score>=80:
     performance="Excellent"
