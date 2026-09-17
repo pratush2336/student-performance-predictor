@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
@@ -44,3 +45,16 @@ else:
     performance="Needs Improvement"
 
 print("Predicted Performance:", performance)
+plt.scatter(data["study_hours"], data["performance_score"])
+
+line_predictions = model.predict(
+    data[["study_hours", "attendance", "previous_grade"]]
+)
+
+plt.plot(data["study_hours"], line_predictions)
+
+plt.xlabel("Study Hours")
+plt.ylabel("Performance Score")
+plt.title("Study Hours vs Performance Score")
+
+plt.show()
