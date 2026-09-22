@@ -16,7 +16,8 @@ y = data["performance_score"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = LinearRegression()
 model.fit(X_train, y_train)
-joblib.dump(model, "student_performance_model.pkl")
+
+joblib.dump(model, "src/student_performance_model.pkl")
 print("\nModel Coefficients:")
 for feature, coefficient in zip(X.columns, model.coef_):
     print(feature, ":", coefficient)
