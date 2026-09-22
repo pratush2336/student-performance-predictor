@@ -1,1 +1,3 @@
-.vscode/
+.vscode/_pycache_/
+*.pyc
+daily_schedule.json
