@@ -62,3 +62,14 @@ plt.title("Study Hours vs Performance Score")
 plt.legend()
 
 plt.show()
+
+
+plt.bar(range(len(y_test)), y_test, label="Actual")
+plt.bar(range(len(y_test)), test_predictions, alpha=0.7, label="Predicted")
+
+plt.xlabel("Test Students")
+plt.ylabel("Performance Score")
+plt.title("Actual vs Predicted Performance")
+
+plt.legend()
+plt.show()
