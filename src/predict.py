@@ -1,7 +1,9 @@
 import pandas as pd
 import joblib
+from pathlib import Path
 
-model = joblib.load("student_performance_model.pkl")
+model_path = Path(__file__).resolve().parent / "student_performance_model.pkl"
+model = joblib.load(model_path)
 
 print("Student Performance Predictor")
 
