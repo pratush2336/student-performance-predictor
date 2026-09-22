@@ -25,6 +25,7 @@ student_data = pd.DataFrame(
 
 score = model.predict(student_data)[0]
 
+score = max(0, min(100, score))
 print("\nPredicted Performance Score:", round(score, 2))
 
 if score >= 80:
