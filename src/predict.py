@@ -27,7 +27,7 @@ print("\nPredicted Performance Score:", round(score, 2))
 
 if score >= 80:
     performance = "Excellent"
-elif score >= 60:
+elif score >= 70:
     performance = "Good"
 else:
     performance = "Needs Improvement"
