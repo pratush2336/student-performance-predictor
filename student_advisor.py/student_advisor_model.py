@@ -6,10 +6,7 @@ import random
 # FILE FOR DAILY SCHEDULE
 SCHEDULE_FILE = "daily_schedule.json"
 
-
-# 
 # 1. STUDY SCORE PREDICTOR
-#
 
 def predict_score(hours_studied, difficulty="medium", consistency=0.8):
     """
@@ -51,9 +48,7 @@ def give_advice(score):
         return "Needs serious improvement. Start with fundamentals + daily practice."
 
 
-
 # 2. WEEKLY TIMETABLE GENERATOR
-
 
 def generate_timetable(subjects, daily_hours=6, start_time="09:00", days=7):
     """
@@ -135,9 +130,7 @@ def print_timetable(timetable):
         print()
 
 
-
 # 3. DAILY SCHEDULE MANAGER
-
 
 def load_schedule():
 
@@ -381,9 +374,7 @@ def reset_schedule():
     return load_schedule()
 
 
-
 # 4. STUDENT ADVISOR
-
 
 def student_advisor():
 
@@ -466,10 +457,8 @@ def student_advisor():
         f"Study Hours/Day       : {study_hours:.1f}"
     )
 
-    
     # KEY OBSERVATIONS
    
-
     print("\n" + "-" * 50)
     print("KEY OBSERVATIONS")
     print("-" * 50)
@@ -518,10 +507,9 @@ def student_advisor():
             "⚠ Daily study time should be increased."
         )
 
-   
+
     # ADVICE
     
-
     print("\n" + "-" * 50)
     print("ADVICE")
     print("-" * 50)
@@ -602,10 +590,8 @@ def student_advisor():
             "Good study commitment. Make sure your sessions are effective."
         )
 
-    
     # PRIORITY AREA
     
-
     if attendance < 75:
 
         priority = "Attendance"
@@ -631,9 +617,7 @@ def student_advisor():
     )
     print("-" * 50)
 
-
 # MAIN MENU
-
 
 def main():
 
@@ -656,10 +640,8 @@ def main():
             "\nEnter choice (1-5): "
         ).strip()
 
-        
         # OPTION 1 — STUDY SCORE PREDICTOR
         
-
         if choice == "1":
 
             print("\n--- STUDY PREDICTOR ---")
@@ -696,18 +678,14 @@ def main():
                 give_advice(score)
             )
 
-       
         # OPTION 2 — STUDENT ADVISOR
         
-
         elif choice == "2":
 
             student_advisor()
 
-       
         # OPTION 3 — DAILY SCHEDULE MANAGER
         
-
         elif choice == "3":
 
             schedule = load_schedule()
@@ -852,10 +830,7 @@ def main():
                 "Invalid choice. Please try again."
             )
 
-
-# 
 # PROGRAM START
-# 
 
 if __name__ == "__main__":
     main()

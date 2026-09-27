@@ -65,12 +65,16 @@ plt.legend()
 plt.show()
 
 
-plt.bar(range(len(y_test)), y_test, label="Actual")
-plt.bar(range(len(y_test)), test_predictions, alpha=0.7, label="Predicted")
+# Circular graph for predicted performance
+predicted_score = score
+remaining_score = max(0, 100 - predicted_score)
 
-plt.xlabel("Test Students")
-plt.ylabel("Performance Score")
-plt.title("Actual vs Predicted Performance")
+plt.pie(
+    [predicted_score, remaining_score],
+    labels=["Predicted Score", "Points Available"],
+    autopct="%1.1f%%",
+    startangle=90
+)
 
-plt.legend()
+plt.title("Student Performance Score Distribution")
 plt.show()
